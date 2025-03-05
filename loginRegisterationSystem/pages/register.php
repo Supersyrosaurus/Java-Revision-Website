@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($checkEmailStmt->num_rows > 0) {
         $message = "Email ID already exists";
-        $toastClass = "#007bff"; // Primary color 
+        $toastClass = "#007bff"; // Primary color
     } else {
         // Prepare and bind
         $stmt = $conn->prepare("INSERT INTO userdata (username, email, password) VALUES (?, ?, ?)");
@@ -28,16 +28,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $toastClass = "#28a745"; // Success color
         } else {
             $message = "Error: " . $stmt->error;
-            $toastClass = "dc3545"; // Danger color
+            $toastClass = "#dc3545"; // Danger color
         }
 
         $stmt->close();
-    
     }
 
     $checkEmailStmt->close();
     $conn->close();
-
 }
 ?>
 

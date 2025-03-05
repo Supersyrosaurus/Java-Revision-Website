@@ -8,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
+    // Prepare and execute
     $stmt = $conn->prepare("SELECT password FROM userdata WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
@@ -16,8 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt->num_rows > 0) {
         $stmt->bind_result($db_password);
         $stmt->fetch();
-        
-        
+
         if ($password === $db_password) {
             $message = "Login successful";
             $toastClass = "bg-success";
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         } else {
             $message = "Incorrect password";
-            $toastClass = "bg-warning";
+            $toastClass = "bg-danger";
         }
     } else {
         $message = "Email not found";
@@ -38,7 +38,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
     $conn->close();
 }
-
 ?>
 
 <!DOCTYPE html>

@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->close();
     } else {
         $message = "Passwords do not match";
-        $toastClass = "bg_warning";
+        $toastClass = "bg-warning";
     }
 
     $conn->close();
