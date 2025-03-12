@@ -1,0 +1,196 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Set a default font for the body */
+body {
+    background-color: white;
+}
+
+.container {
+    width: 90vw;
+    max-width: 62.5em;
+    position: relative;
+    margin: auto;
+}
+
+.add-flashcard-con {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1.2em 1em;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.add-flashcard-con button {
+    font-size: 1em;
+    background-color: rgb(155, 112, 155);
+    color: #ffffff;
+    padding: 0.8em 1.2em;
+    font-weight: 500;
+    border-radius: 0.4em;
+}
+#card-con {
+    margin-top: auto;
+}
+
+.question-container {
+    width: 90vw;
+    max-width: 34em;
+    border: 1px solid rgb(114, 112, 112);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    padding: 3em 2em;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.question-container h2 {
+    font-size: 2.2em;
+    color:black;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 11fr 1fr;
+    gap: 1em
+    margin-bottom auto;
+}
+
+.error-con {
+    align-self: center;
+}
+#error{
+    color:red;
+    font-weight: 400;
+}
+.fa-xmark {
+    font-size: 1.4em;
+    background-color: rgb(21, 53, 148);
+    height: 1.8em;
+    width: 1.8em;
+    display: grid;
+    place-items: center;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    justify-self: flex-end;
+}
+
+label {
+    color: grey;
+    font-weight: 600;
+    margin-bottom: 0.3em;
+}
+
+textarea {
+    width: 100%;
+    padding: 0.7em 0.5em;
+    border: 1px solid #d1d1d1;
+    outline: none;
+    color: gray;
+    border-radius: 0.3em;
+    resize: none;
+}
+
+textarea:not(:last-child) {
+    margin-bottom: 1.2em;
+}
+
+textarea:focus {
+    border-color: grey
+}
+
+#save-btn {
+    font-size: 1em;
+    background-color: royalblue;
+    color: white;
+    padding: 0.3em;
+    border-radius: 0.3em;
+    font-weight: 600;
+}
+.card-list-container{
+    display:grid;
+    padding: 50px;
+    gap: 1.5em;
+    grid-template-columns: 3fr 3fr;
+}
+.card{
+    background-color: white;
+    box-shadow: 0 0.4em 1.2em black;
+    padding: 1.2em;
+    border-radius: 0.4em;
+}
+.question-div,
+.answer.div{
+    text-align:justify;
+}
+.question-div {
+    margin-bottom: 0.5em;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+}
+.answer-div{
+margin-top: 1em;
+font-weight: 400;
+color: rgb(25, 185, 60);
+}
+.show-hide-btn{
+    display: block;
+    background-color: rgb(138, 97, 134);
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.6em 0;
+    border-radius: 0.3em;
+}
+.buttons-con{
+    display:flex;
+    justify-content: flex-end;
+}
+.edit,
+.delete{
+    background-color: transparent;
+    padding:0.5em;
+    font-size: 1.2em;
+}
+.edit{
+    color: blue;
+}
+.delete{
+    color:red;
+}
+.hide {
+    display: none;
+}
+@media screen and (max-width:800px){
+    .card-list-container{
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5em;
+    }
+}
+@media screen and (max-width: 450px) {
+body{
+    font-size: 14px;
+}
+.card-list-container{
+    grid-template-columns: 1fr;
+    gap:1.2em;
+}
+}
