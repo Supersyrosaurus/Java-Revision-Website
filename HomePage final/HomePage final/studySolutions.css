@@ -1,0 +1,243 @@
+header {
+    background-image: url(./icons/Header9-bg.jpg); /* image from https://pixabay.com/photos/apple-computer-desk-workspace-1868496/ */
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 10vw;
+    height: 20vh;
+}
+
+/* Navigation container */
+.nav-container {
+    display: flex; /* Flexbox layout to align items */
+    justify-content: center;
+    background-color: #9bb1ff;
+    padding: 0.5vw; /* Padding around the container for spacing */
+    border-radius: 5px;
+    gap: 0.2vw;
+}
+
+/* Navigation links */
+.nav-container a {
+    text-decoration: none; /* Remove underline for links */
+    color: #000000;
+    font-weight: bolder;
+    border-radius: 5px;
+    padding: 0.5vw 1vw;
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative; /* Required for positioning the icon */
+    overflow: hidden; /* Ensure the icon doesn't overflow */
+}
+
+/* Hover effect for links */
+.nav-container a:hover {
+    color: transparent; /* Hide text color on hover */
+    transform: scale(1.1);
+}
+
+/* Icon animation on hover */
+.nav-container a::after {
+    content: ""; /* Empty content for the pseudo-element */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px; /* Set icon width */
+    height: 30px; /* Set icon height */
+    background-image: var(--icon-url); /* Use CSS variable for icon URL */
+    background-size: cover; /* Ensure the icon fits */
+    transform: translate(-50%, -50%) scale(0); /* Initially hidden */
+    opacity: 0; /* Hide the icon by default */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Show icon on hover */
+.nav-container a:hover::after {
+    opacity: 1; /* Show the icon on hover */
+    transform: translate(-50%, -50%) scale(1); /* Scale the icon to full size */
+}
+
+/* Specific icons for each link */
+.nav-container a[href="studySolutions.html"]::after {
+    --icon-url: url('./icons/icons8-home-50.png');
+}
+
+.nav-container a[href="FlashCards.html"]::after {
+    --icon-url: url('./icons/icons8-books-emoji-48.png');
+}
+
+.nav-container a[href="notes.html"]::after {
+    --icon-url: url('./icons/icons8-notes-50.png');
+}
+
+.nav-container a[href="WebQuiz.html"]::after {
+    --icon-url: url('./icons/icons8-quiz-48.png');
+}
+
+.nav-container a[href="contacts.html"]::after {
+    --icon-url: url('./icons/icons8-contacts-50.png');
+}
+
+.nav-container a[href="signUp.html"]::after {
+    --icon-url: url('./icons/icons8-sign-up-40.png');
+}
+
+.nav-container a[href="signIn.html"]::after {
+    --icon-url: url('./icons/icons8-sign-up-50.png');
+}
+
+/* Styles for small screens */
+@media screen and (max-width: 600px) {
+    /* Adjust layout for smaller screens */
+    .box-container {
+        flex-direction: column; /* Stack boxes vertically */
+    }
+
+    .box-1, .box-2, .box-3 {
+        height: auto; /* Allow boxes to grow based on content */
+    }
+
+    /* Increase font size for smaller screens */
+    h1 {
+        font-size: 5vw;
+    }
+
+    h2 {
+        font-size: 4vw;
+    }
+
+    p, li, footer {
+        font-size: 3vw;
+    }
+}
+
+/* Responsive navigation bar adjustments */
+@media screen and (max-width: 600px) {
+    .nav-container.responsive {
+        position: relative;
+        flex-direction: row; /* Stack navigation items vertically */
+    }
+
+    .nav-container.responsive a {
+        display: block; /* Show all navigation items */
+        text-align: left;
+    }
+}
+
+.main-container {
+    background-color: #bfd7ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+    height: 70vh;
+    overflow: auto;
+    margin: 0vw;
+    padding: 1vw;   
+    gap: 1vw;
+}
+
+.box-1 {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: url(./icons/bokeh-6563269_1280.jpg); /* image from https://pixabay.com/photos/apple-computer-desk-workspace-1868496/ */
+    background-size: cover;
+    background-position: center;
+    flex: 1 1 98%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #80a6f1;
+    border-radius: 5px;
+    height: 40vw;
+    margin: 1vw;
+    padding: 0;
+}
+
+/* Container for Box-2 and Box-3 */
+.box-container {
+    display: flex;
+    flex-direction: row; /* Stack Box-2 and Box-3 vertically */
+    align-items: stretch;
+    justify-content: space-between;
+    flex: 98%; /* Takes up 33% of the available space */
+    gap: 1vw; /* Add spacing between Box-2 and Box-3 */
+}
+
+.box-2, .box-3 {
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 28%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f2f2f5;
+    border: 1px solid #80a6f1;
+    border-radius: 5px;
+    height: 20vw;
+    margin: 1vw;
+    padding: 3vw;
+}
+
+.box-3 {
+    flex: 1 1 20%;
+}
+
+/* Style for the Sign-In, Sign-Up button */
+input[type="submit"] {
+    font-family: 'Times New Roman', Times, serif;
+    color: #000000;
+    font-size: 18px;
+    background-color: #9bb1ff;
+    cursor: pointer;
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Add rounded corners */
+    margin-top: 0.1vh;
+    padding: 0.5vw 1vw;
+}
+
+input[type="submit"]:hover {
+    color: #ffffff;
+    background-color: #5b2164;
+    transform: scale(1.1);
+} 
+
+/* Font & background styles */
+body {
+     font-family: 'Times New Roman', Times, serif;
+     background-color: #f2f5f7;
+     color: #8f8989;
+     margin: 0vw;
+     padding: 0vw;
+}
+
+h1, h2, p, li, footer {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 4vw;
+    text-align: center;
+    color: #01000af5;
+    font-weight: bold; /* Make text bold */
+}
+
+h2 {
+    font-size: 2vw;
+}
+
+p, li, footer {
+    font-size: 1.2vw;
+}
+
+li {
+    text-align: left;
+}
+
+footer {
+    font-size: 1vw;
+    background-color: #9bb1ff;
+    position: fixed;
+    border-radius: 5px;
+    left: 0vw;
+    bottom: 0vw;
+    width: 100vw;
+    padding: 0.2vw;
+}
