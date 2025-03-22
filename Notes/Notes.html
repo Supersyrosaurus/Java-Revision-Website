@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Revision Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1, h2 {
+            color: #0056b3;
+        }
+        code {
+            background-color: #e8e8e8;
+            padding: 5px;
+            display: block;
+            margin: 10px 0;
+        }
+        pre {
+            background-color: #e8e8e8;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Java Revision Notes</h1>
+
+    <h2>1. Introduction to Java</h2>
+    <p>Java is a high-level, object-oriented programming language developed by Sun Microsystems (now owned by Oracle).</p>
+    <p>It was released in 1995 and is widely used for various types of applications.</p>
+    <p>Java is platform-independent due to the Java Virtual Machine (JVM), making it Write Once, Run Anywhere (WORA).</p>
+    <p>It supports multithreading, garbage collection, and a large standard library.</p>
+
+    <h2>2. Basic Syntax</h2>
+    <p>Every Java program starts with a class.</p>
+    <p>The main method is the entry point:</p>
+    <pre><code>public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}</code></pre>
+    <p>Java is case-sensitive, and statements end with a semicolon (;).</p>
+
+    <h2>3. Data Types & Variables</h2>
+    <p><strong>Primitive Data Types:</strong> int, double, char, boolean, float, long, byte, short</p>
+    <p><strong>Reference Data Types:</strong> Objects, Arrays, Strings</p>
+    <pre><code>int age = 25;
+double price = 19.99;
+char grade = 'A';
+boolean isJavaFun = true;</code></pre>
+
+    <h2>4. Operators</h2>
+    <p><strong>Arithmetic Operators:</strong> +, -, *, /, %</p>
+    <p><strong>Relational Operators:</strong> ==, !=, >, <, >=, <=</p>
+    <p><strong>Logical Operators:</strong> &&, ||, !</p>
+    <p><strong>Assignment Operators:</strong> =, +=, -=, *=, /=</p>
+
+    <h2>5. Control Flow Statements</h2>
+    <h3>If-Else Statement:</h3>
+    <pre><code>if (age > 18) {
+    System.out.println("Adult");
+} else {
+    System.out.println("Minor");
+}</code></pre>
+
+    <h3>Loops:</h3>
+    <p><strong>For Loop:</strong></p>
+    <pre><code>for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}</code></pre>
+
+    <p><strong>While Loop:</strong></p>
+    <pre><code>int i = 0;
+while (i < 5) {
+    System.out.println(i);
+    i++;
+}</code></pre>
+
+    <h2>6. Methods & Functions</h2>
+    <p>A method is a block of code that performs a specific task.</p>
+    <pre><code>public static int add(int a, int b) {
+    return a + b;
+}</code></pre>
+    <p>Methods can have parameters and return types, and they help in code reusability.</p>
+
+    <h2>7. Object-Oriented Programming (OOP)</h2>
+    <h3>Classes & Objects</h3>
+    <pre><code>class Car {
+    String model;
+    int year;
+    Car(String model, int year) {
+        this.model = model;
+        this.year = year;
+    }
+}</code></pre>
+    <p><strong>Encapsulation:</strong> Hiding data using private keyword</p>
+    <p><strong>Inheritance:</strong> Using extends to inherit a class</p>
+    <p><strong>Polymorphism:</strong> Method Overloading & Overriding</p>
+    <p><strong>Abstraction:</strong> Hiding implementation using abstract classes and interfaces</p>
+</body>
+</html>
